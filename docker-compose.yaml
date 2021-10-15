@@ -2,7 +2,6 @@ version: "3.7"
 services:
     traefik:
         image: "traefik:v2.4"
-        container_name: "traefik"
         command:
             - "--api.insecure=true"
             - "--providers.docker=true"
@@ -29,8 +28,8 @@ services:
         environment:
             - AGENT_HOSTNAME=otel-collector
             - OTEL_PYTHON_LOG_CORRELATION=true
-        #volumes:
-        #    - ./services/litr/app:/app/app
+        volumes:
+           - ./services/litr:/app
         networks:
             - norse
         labels:

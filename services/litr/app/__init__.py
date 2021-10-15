@@ -7,7 +7,7 @@ from rich.console import Console
 
 FORMAT = "%(message)s"
 
-f = open("logs/vtest.log", "a", encoding="utf-8")
+f = open("vtest.log", "a+", encoding="utf-8")
 
 logging.basicConfig(
     format=FORMAT
